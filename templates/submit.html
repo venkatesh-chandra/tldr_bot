@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>TL;DR bot</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+ <div class="login">
+ 
+  <h1>TL;DR bot - Summarize long posts</h1>
+
+    <form action="/summarizer"method="post">
+      <!-- <input type="text" name="comment"/> -->
+    <textarea name="note" placeholder="Enter note" rows="4" cols="50" required></textarea>
+    <br>
+    <br>
+    <textarea name="trim_val" placeholder="Enter number of sentences between 1 - 20. Default = 7" rows="4" cols="20"></textarea>
+    <br>
+    <br>
+    
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Give me summary</button>
+    </form>
+
+   {{ summarized_text  | safe }}
+   <br>
+   <br>
+ </div>
+
+
+</body>
+</html>
